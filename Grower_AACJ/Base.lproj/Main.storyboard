@@ -138,14 +138,22 @@
                                         <rect key="frame" x="32" y="27" width="288" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <action selector="actionUserText:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="ank-aR-bdz"/>
+                                            <action selector="actionUserTxtOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="bwA-zL-ctK"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" id="iSX-7i-ic9">
                                         <rect key="frame" x="32" y="77" width="288" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="actionPassTxtOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="iYq-si-gHi"/>
+                                            <action selector="actionPassTxtOn:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="dtv-5d-k9D"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oM6-Av-Krh">
                                         <rect key="frame" x="18" y="113" width="314" height="41"/>
@@ -183,6 +191,10 @@
                         <outlet property="btnIngresar" destination="oM6-Av-Krh" id="3lK-PV-hNI"/>
                         <outlet property="btnOutRecuperar" destination="9RJ-1c-5R7" id="1QD-Ij-JmQ"/>
                         <outlet property="btnOutRegistrar" destination="yHh-yA-Wkc" id="I3z-NH-rQ7"/>
+                        <outlet property="txtEmail" destination="Y5q-dP-ieB" id="GQH-Bh-frv"/>
+                        <outlet property="txtRegPassConf" destination="LeD-79-1vw" id="5HJ-oj-OGH"/>
+                        <outlet property="txtRegPassword" destination="77g-NH-viP" id="BDm-t2-YVr"/>
+                        <outlet property="txtRegUser" destination="XZ1-GJ-wvM" id="pCQ-2P-g5B"/>
                         <outlet property="txvPassword" destination="iSX-7i-ic9" id="jHA-GX-E9D"/>
                         <outlet property="txvUsuario" destination="uJK-ag-FAl" id="Xkg-0t-vB3"/>
                         <outlet property="vwEnviarMail" destination="XLK-4d-HET" id="g2L-EA-gua"/>
@@ -223,18 +235,30 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="actionTxtRegUser:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="b6c-Si-k5O"/>
+                                <action selector="actionTxtRegUserOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="bjg-CO-GN0"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" id="77g-NH-viP">
                             <rect key="frame" x="32" y="62" width="288" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="actionPassOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="9tA-Kb-tPW"/>
+                                <action selector="actionTxtPassOn:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="yba-DK-PwW"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Contraseña" textAlignment="natural" minimumFontSize="17" id="LeD-79-1vw">
                             <rect key="frame" x="32" y="105" width="288" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="actionPassConfOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="VED-2X-TuW"/>
+                                <action selector="actionPassConfOn:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="GdU-jt-nQP"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xx0-95-jcu">
                             <rect key="frame" x="18" y="143" width="314" height="41"/>
@@ -270,6 +294,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="actionTxtEmailOff:" destination="IBb-GH-cJ3" eventType="editingDidEnd" id="2gR-gf-N3a"/>
+                                <action selector="actionTxtEmailOn:" destination="IBb-GH-cJ3" eventType="editingDidBegin" id="0ar-Fs-sZb"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qNm-QW-wAx">
                             <rect key="frame" x="18" y="107" width="314" height="41"/>

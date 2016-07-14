@@ -17,18 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
-    UIImageView *ImageIcono=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [ImageIcono setImage:[UIImage imageNamed:@"people.png"]];
-    [ImageIcono setContentMode:UIViewContentModeCenter];
-    self.txvUsuario.leftView=ImageIcono;
-    self.txvUsuario.leftViewMode=UITextFieldViewModeAlways;
+    //Inicializa las imagenes en los textField de las vistas.
+    [self cargarImagenes:self.txvUsuario imagen:@"people.png"];
     
-    UIImageView *ImageIcoPass=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [ImageIcoPass setImage:[UIImage imageNamed:@"key.png"]];
-    [ImageIcoPass setContentMode:UIViewContentModeCenter];
-    self.txvPassword.leftView=ImageIcoPass;
-    self.txvPassword.leftViewMode=UITextFieldViewModeAlways;
+    [self cargarImagenes:self.txvPassword imagen:@"key.png"];
+    
+    [self cargarImagenes:self.txtRegUser imagen:@"people.png"];
+    
+    [self cargarImagenes:self.txtRegPassword imagen:@"key.png"];
+    
+    [self cargarImagenes:self.txtRegPassConf imagen:@"key.png"];
+    
+    [self cargarImagenes:self.txtEmail imagen:@"email.png"];
     
 }
 
@@ -66,6 +66,74 @@
     [self crearTransisionCancelar:_vwEnviarMail vistaDos:_VwIngresar btnCancelar:YES];
 }
 
+- (IBAction)actionUserText:(id)sender {
+    [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionUserTxtOff:(id)sender {
+    [self moveKeyBoard:NO];
+}
+
+- (IBAction)actionPassTxtOn:(id)sender {
+     [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionPassTxtOff:(id)sender {
+    [self moveKeyBoard:NO];
+}
+
+- (IBAction)actionTxtRegUser:(id)sender {
+    [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionTxtRegUserOff:(id)sender {
+    [self moveKeyBoard:NO];
+}
+
+- (IBAction)actionTxtPassOn:(id)sender {
+    [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionPassOff:(id)sender {
+    [self moveKeyBoard:NO];
+}
+
+- (IBAction)actionPassConfOn:(id)sender {
+    [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionPassConfOff:(id)sender {
+    [self moveKeyBoard:NO];
+}
+
+- (IBAction)actionTxtEmailOn:(id)sender {
+    [self moveKeyBoard:YES];
+}
+
+- (IBAction)actionTxtEmailOff:(id)sender {
+     [self moveKeyBoard:NO];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *>*)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    //[self.txvPassword endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+-(void) moveKeyBoard:(BOOL) up
+{
+    const int movementDistance = 200; // lo que sea necesario, en mi caso yo use 80
+    const float movementDuration = 0.3f; // lo que sea necesario
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
 
 -(void) crearTransision:(UIView *)vistaOrigen vistaDos:(UIView *)vistaFinal btnCancelar:(BOOL)estado
 {
@@ -96,11 +164,6 @@
         [self hiddenField];
     
     
-   //UIView* viewToRemove=[self.vwRegistrarse viewWithTag:17];
-    
-   // [self.VwIngresar.layer removeAllAnimations];
-    
-    
     [_vwRegistrarse removeFromSuperview];
     [_vwEnviarMail removeFromSuperview];
     
@@ -108,22 +171,15 @@
     [UIView transitionFromView:_vwRegistrarse toView:_VwIngresar duration:2 options:UIViewAnimationOptionTransitionFlipFromBottom completion:nil];
     
     [self visibleField];
-    
-   /*
-   [UIView transitionWithView:_vwRegistrarse duration:2 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
-        [_vwRegistrarse addSubview:_VwIngresar];
-    } completion:^ (BOOL finished){
-        if(finished)
-        {
-            if (estado) {
-                [self visibleField];
-            }else
-                [self hiddenField];
-        }
-        
-    }];
-    */
+}
 
+-(void) cargarImagenes:(UITextField *)txtField imagen:( NSString*)imagenCargar
+{
+    UIImageView *ImageIcono=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [ImageIcono setImage:[UIImage imageNamed:imagenCargar]];
+    [ImageIcono setContentMode:UIViewContentModeCenter];
+    txtField.leftView=ImageIcono;
+    txtField.leftViewMode=UITextFieldViewModeAlways;
 }
 
 
@@ -146,8 +202,5 @@
     _btnOutRegistrar.hidden=NO;
     
 }
-
-
-
 
 @end

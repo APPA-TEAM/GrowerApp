@@ -29,6 +29,7 @@
 		5B849A031D1CC76600D1D10C /* Grower_AACJ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B849A011D1CC76600D1D10C /* Grower_AACJ.xcdatamodeld */; };
 		5B849A051D1CC76600D1D10C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B849A041D1CC76600D1D10C /* Assets.xcassets */; };
 		5B849A081D1CC76600D1D10C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B849A061D1CC76600D1D10C /* LaunchScreen.storyboard */; };
+		5BA0C0A91D3712A3008068B3 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BA0C0A81D3712A3008068B3 /* email.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		5B849A041D1CC76600D1D10C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B849A071D1CC76600D1D10C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B849A091D1CC76600D1D10C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA0C0A81D3712A3008068B3 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5B645F361D25F81C0027F8E0 /* btn-envCorreo.png */,
+				5BA0C0A81D3712A3008068B3 /* email.png */,
 				5B52BB7D1D271068005D1A02 /* people.png */,
 				5B52BB7F1D271077005D1A02 /* key.png */,
 				5B645F0B1D25DE0B0027F8E0 /* ingresar.png */,
@@ -204,6 +207,7 @@
 				5B7D81E21D24A22E00BFD052 /* btn-correo2.png in Resources */,
 				5B7D81E41D24A4C800BFD052 /* Registrarse-fondo.png in Resources */,
 				5B7D81E01D24A21300BFD052 /* btn-facebook2.png in Resources */,
+				5BA0C0A91D3712A3008068B3 /* email.png in Resources */,
 				5B7D81D81D249B0100BFD052 /* Home-fondo.png in Resources */,
 				5B645F371D25F81C0027F8E0 /* btn-envCorreo.png in Resources */,
 				5B7D81DC1D249C1900BFD052 /* logo.png in Resources */,
